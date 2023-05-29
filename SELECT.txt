@@ -1,0 +1,18 @@
+$sql_response = "SELECT u.name, r.*
+$sql = "SELECT sk.*, s.service, s.cost, s.id AS services_id FROM services_kind sk LEFT JOIN services s ON sk.id = s.service_kind";
+$sql = "SELECT id, service_name FROM services_kind";
+$sql_response = "SELECT u.name, r.*
+$sql = "SELECT sk.*, s.service, s.cost, s.id AS services_id FROM services_kind sk LEFT JOIN services s ON sk.id = s.service_kind";
+$edited_response = "SELECT * FROM `responses` WHERE `id`='". $response_id ."'";
+$edited_service = "SELECT * FROM `services` WHERE `id`='". $services_id ."'";
+$sql = "SELECT sk.*, s.service, s.cost FROM services_kind sk LEFT JOIN services s ON sk.id = s.service_kind";
+$check_user_query = "SELECT * FROM users WHERE login = '". $login ."'";
+$check_login_query = "SELECT * FROM users WHERE login = '". $login ."' AND password = '". $password ."'";
+$user_info_sql = "SELECT u.id, u.name, r.response
+$user_info_sql = "SELECT u.id, u.name, r.response
+								FROM users u
+								JOIN (SELECT user_id, response
+									FROM responses
+									WHERE user_id = '" . $user_id . "') r ON u.id = r.user_id";
+
+
